@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2020 Yihui Xiong for Makerdiary
+ * Copyright (c) 2022 Moritz Plattner
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,55 +22,45 @@
  * THE SOFTWARE.
  */
 
-#ifndef _MAKERDIARY_M60_KEYBOARD_H_
-#define _MAKERDIARY_M60_KEYBOARD_H_
+#ifndef CORNHOLIUS_H
+#define CORNHOLIUS_H
 
 #define _PINNUM(port, pin)    ((port)*32 + (pin))
+
+#define UICR_REGOUT0_VALUE UICR_REGOUT0_VOUT_3V0
 
 /*------------------------------------------------------------------*/
 /* LED
  *------------------------------------------------------------------*/
-#define LEDS_NUMBER           1
-#define LED_PRIMARY_PIN       _PINNUM(0, 30)  // Red
-#define LED_STATE_ON          0
+#define LEDS_NUMBER         1
+#define LED_PRIMARY_PIN     _PINNUM(1, 0)   // green
+//#define LED_SECONDARY_PIN   _PINNUM(1, 2)   // blue
+#define LED_STATE_ON        0
 
-#define LED_RGB_RED_PIN       _PINNUM(0, 30)
-#define LED_RGB_GREEN_PIN     _PINNUM(0, 29)
-#define LED_RGB_BLUE_PIN      _PINNUM(0, 31)
-#define BOARD_RGB_BRIGHTNESS  0x404040
 /*------------------------------------------------------------------*/
 /* BUTTON
  *------------------------------------------------------------------*/
-#define BUTTONS_NUMBER        2
-#define BUTTON_1              _PINNUM(0, 27)
-#define BUTTON_2              _PINNUM(0, 19)  // ESC
-#define BUTTON_PULL           NRF_GPIO_PIN_PULLUP
-
-/*------------------------------------------------------------------*/
-/* On board regulator control
- *------------------------------------------------------------------*/
-#define LDO_CONTROL_PIN       _PINNUM(0, 28)  // Enables external pwr
+#define BUTTONS_NUMBER    2
+#define BUTTON_1          _PINNUM(0, 18)  // RESET
+#define BUTTON_2          _PINNUM(1, 7)  // unconnected
+#define BUTTON_PULL       NRF_GPIO_PIN_PULLUP
 
 //--------------------------------------------------------------------+
 // BLE OTA
 //--------------------------------------------------------------------+
-#define BLEDIS_MANUFACTURER   "Makerdiary"
-#define BLEDIS_MODEL          "M60 Mechanical Keyboard"
+#define BLEDIS_MANUFACTURER  "ebastler"
+#define BLEDIS_MODEL         "cornholius rev A"
 
 //--------------------------------------------------------------------+
 // USB
 //--------------------------------------------------------------------+
-#define USB_DESC_VID            0x2886
-#define USB_DESC_UF2_PID        0xF00F
-#define USB_DESC_CDC_ONLY_PID   0xF00F
+#define USB_DESC_VID           0x239A
+#define USB_DESC_UF2_PID       0x0029
+#define USB_DESC_CDC_ONLY_PID  0x0029
 
-//--------------------------------------------------------------------+
-// UF2
-//--------------------------------------------------------------------+
-#define UF2_PRODUCT_NAME        "MakerDiary M60 Mechanical Keyboard"
-#define UF2_VOLUME_LABEL        "M60KEYBOARD"
-#define UF2_BOARD_ID            "M60KEYBOARD"
-#define UF2_INDEX_URL           "https://wiki.makerdiary.com/m60/"
+#define UF2_PRODUCT_NAME  "cornholius_rev_a"
+#define UF2_VOLUME_LABEL  "CRNHLS_A"
+#define UF2_BOARD_ID      "cornholius_rev_a"
+#define UF2_INDEX_URL     "https://social.mpwr.xyz"
 
-
-#endif /* _MAKERDIARY_M60_KEYBOARD_H_ */
+#endif // CORNHOLIUS_H

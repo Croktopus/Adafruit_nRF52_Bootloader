@@ -22,8 +22,8 @@
  * THE SOFTWARE.
  */
 
-#ifndef _MAKERDIARY_M60_KEYBOARD_H_
-#define _MAKERDIARY_M60_KEYBOARD_H_
+#ifndef _MAKERDIARY_NRF82540_CONNECT_KIT_H_
+#define _MAKERDIARY_NRF82540_CONNECT_KIT_H_
 
 #define _PINNUM(port, pin)    ((port)*32 + (pin))
 
@@ -31,31 +31,26 @@
 /* LED
  *------------------------------------------------------------------*/
 #define LEDS_NUMBER           1
-#define LED_PRIMARY_PIN       _PINNUM(0, 30)  // Red
+#define LED_PRIMARY_PIN       _PINNUM(1, 15)  // Green
 #define LED_STATE_ON          0
 
-#define LED_RGB_RED_PIN       _PINNUM(0, 30)
-#define LED_RGB_GREEN_PIN     _PINNUM(0, 29)
-#define LED_RGB_BLUE_PIN      _PINNUM(0, 31)
+#define LED_RGB_RED_PIN       _PINNUM(1, 10)
+#define LED_RGB_GREEN_PIN     _PINNUM(1, 11)
+#define LED_RGB_BLUE_PIN      _PINNUM(1, 12)
 #define BOARD_RGB_BRIGHTNESS  0x404040
 /*------------------------------------------------------------------*/
 /* BUTTON
  *------------------------------------------------------------------*/
 #define BUTTONS_NUMBER        2
-#define BUTTON_1              _PINNUM(0, 27)
-#define BUTTON_2              _PINNUM(0, 19)  // ESC
+#define BUTTON_1              _PINNUM(1, 0)  // P1.00: User Button
+#define BUTTON_2              _PINNUM(1, 7)  // P1.07: NC
 #define BUTTON_PULL           NRF_GPIO_PIN_PULLUP
-
-/*------------------------------------------------------------------*/
-/* On board regulator control
- *------------------------------------------------------------------*/
-#define LDO_CONTROL_PIN       _PINNUM(0, 28)  // Enables external pwr
 
 //--------------------------------------------------------------------+
 // BLE OTA
 //--------------------------------------------------------------------+
 #define BLEDIS_MANUFACTURER   "Makerdiary"
-#define BLEDIS_MODEL          "M60 Mechanical Keyboard"
+#define BLEDIS_MODEL          "nRF52840 Connect Kit"
 
 //--------------------------------------------------------------------+
 // USB
@@ -67,10 +62,10 @@
 //--------------------------------------------------------------------+
 // UF2
 //--------------------------------------------------------------------+
-#define UF2_PRODUCT_NAME        "MakerDiary M60 Mechanical Keyboard"
-#define UF2_VOLUME_LABEL        "M60KEYBOARD"
-#define UF2_BOARD_ID            "M60KEYBOARD"
-#define UF2_INDEX_URL           "https://wiki.makerdiary.com/m60/"
+#define UF2_PRODUCT_NAME        "nRF52840 Connect Kit"
+#define UF2_VOLUME_LABEL        "CONNECTKIT"
+#define UF2_BOARD_ID            "nRF52840-Connect-Kit"
+#define UF2_INDEX_URL           "https://wiki.makerdiary.com/nrf52840-connectkit/"
 
 
-#endif /* _MAKERDIARY_M60_KEYBOARD_H_ */
+#endif /* _MAKERDIARY_NRF82540_CONNECT_KIT_H_ */
