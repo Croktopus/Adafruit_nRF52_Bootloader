@@ -33,8 +33,8 @@
 /* LED
  *------------------------------------------------------------------*/
 #define LEDS_NUMBER         1
-#define LED_PRIMARY_PIN     _PINNUM(1, 0)   // green
-#define LED_SECONDARY_PIN   _PINNUM(1, 2)   // blue
+#define LED_PRIMARY_PIN     _PINNUM(1, 13)   // unconnected
+//#define LED_SECONDARY_PIN   _PINNUM(0, 10)   // unconnected
 #define LED_STATE_ON        0
 
 /*------------------------------------------------------------------*/
@@ -42,7 +42,7 @@
  *------------------------------------------------------------------*/
 #define BUTTONS_NUMBER    2
 #define BUTTON_1          _PINNUM(0, 18)  // RESET
-#define BUTTON_2          _PINNUM(1, 7)  // unconnected
+#define BUTTON_2          _PINNUM(0, 7)  // unconnected
 #define BUTTON_PULL       NRF_GPIO_PIN_PULLUP
 
 //--------------------------------------------------------------------+
